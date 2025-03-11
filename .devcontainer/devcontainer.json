@@ -1,0 +1,19 @@
+{
+    "name": "Secure Connected Vehicle Dashboard Dev Container",
+    "image": "mcr.microsoft.com/devcontainers/universal:2",
+    "features": {
+        "ghcr.io/devcontainers/features/python:1": {},
+        "ghcr.io/devcontainers/features/node:1": {}
+    },
+    "postCreateCommand": "sudo apt update && sudo apt upgrade -y && pip3 install Flask && npm install -g create-react-app && npx create-react-app client && cd client && npm install && cd ../server && pip3 install -r requirements.txt",
+    "forwardPorts": [3000, 5000],
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "esbenp.prettier-vscode",
+                "ms-python.python",
+                "dbaeumer.vscode-eslint"
+            ]
+        }
+    }
+}
